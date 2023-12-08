@@ -1,0 +1,68 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('./bkgd.jpg');
+    font-family: "Young Serif", monospace;
+}
+
+main {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+div {
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+}
+
+form {
+    display: inline-flex;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 300px;
+}
+
+label {
+    margin-bottom: 5px;
+    padding: 3px 20px 3px 20px;
+    justify-content: center;
+}
+
+input {
+    margin-bottom: 5px;
+    width: 80%;
+    padding: 3px 5px;
+    text-align: left;
+    justify-content: center;
+}
+
+textarea {
+    margin-bottom: 10px;
+    width: 100%;
+    min-height: 100px;
+    padding: 3px 5px;
+    text-align: left;
+    justify-content: center;
+}
+
+.custom-button {
+    display: flex;
+    flex-direction: row;
+    padding: 6px 12px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-family: "Young Serif", monospace;
+    border: 1px solid #ccc;
+    background-color: #f8f8f885;
+    border: 1px solid rgba(0, 0, 0, 0.537);
+    text-align: center;
+}
+
+canvas {
+    margin: 10px;
+    border: 10px solid rgb(196, 196, 196);
+}

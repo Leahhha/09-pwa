@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+body{
+    width: 80%;
+    max-width: 1440px;
+    min-width: 800px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; */
+    
+    /* background: url(images/cave1.jpg)no-repeat;
+    background-size: cover;
+    background-position: center; */
+
+    padding-inline: clamp(1.5rem, 2vw, 2rem);
+    /* overflow: hidden; */
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    padding: 0 2rem;
+    background:#ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+
+}
+.logo{
+    font-size: 2em;
+    /* color: #fff; */
+    color:black;
+    user-select: none;
+}
+.navigation a{
+    position: relative;
+    font-size: 1.1rem;
+    font-weight: 500;
+    /* color: #fff; */
+    color:black;
+    margin-left: 40px;
+
+}
+.navigation a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    /* background: #fff; */
+    background:black;
+    border-radius: 5px;
+    transform-origin: right;
+    transform:scaleX(0);
+    transition: transform .5s;
+}
+.navigation a:hover::after{
+    transform:scaleX(1);
+    transform-origin: left;
+
+}
+.slides {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+#slidesTop {
+    margin-top: 7em;
+}
+.float-img-left {
+    float: left;
+    width: 25%;
+    max-width: 301px;
+    height: auto;
+    margin-right: 1em;
+    margin-bottom: .25em;
+}
+h2 {
+    color: #333;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* pagination style */
+.container {
+    width: 100%; /* Set the width of the container */
+}
+
+.pagination {
+    width: 50%; /* Adjust this width as needed */
+    margin: 0 auto; /* Horizontally center the pagination */
+    text-align: center; /* Center the links within the pagination */
+}
+
+.pagination a {
+    color: black;
+    display: inline-block; /* Display the links in a line */
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: black;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+

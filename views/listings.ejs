@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Young+Serif">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <main>
+
+        <h1>Hi friends!</h1>
+
+        <img src="./frawg.jpg" width="150px" />
+        <h3>Froggy Town is having a community sale!</h3>
+        <h3>See what's available!</h3>
+        <p>you can also <a href="/">post</a> your own items</p>
+
+        <div id="container">
+
+            <% listings.forEach(function(listing) { %>
+                <hr>
+                <div class="listing">
+                    <h2>
+                        <%= listing.item %>
+                    </h2>
+                    <p><strong>Time Available:</strong>
+                        <%= listing.time %>
+                    </p>
+                    <% if (listing.image) { %>
+                        <img src="uploads/<%= listing.image.filename %>" type="<%= listing.image.mimetype %>"
+                            alt="Picture of <%= listing.item %>" style="max-width: 600px; max-height: 600px;" />
+                        <% } %>
+                            <p><strong>Description:</strong>
+                                <%= listing.description %>
+                            </p>
+                            <p><strong>Name:</strong>
+                                <%= listing.name %>
+                            </p>
+                            <p><strong>Contact:</strong>
+                                <%= listing.contact %>
+                            </p>
+                </div>
+                <% }); %>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

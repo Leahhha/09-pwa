@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Young+Serif">
+    <meta charset="utf-8" />
+</head>
+
+<body>
+    <main>
+
+        <h1>Hi friends! 🤸🏼‍♂️</h1>
+
+        <img src="./frawg.jpg" width="150px" />
+        <h3>Froggy Town is having a community sale!</h3>
+        <h3>Post an item or see what's available!</h3>
+
+        <div id="form">
+            <form action="/thank-you" method="post" enctype="multipart/form-data">
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="contact">Contact:</label>
+                <input type="text" id="contact" name="contact" placeholder="name@email.com">
+
+                <label for="time">Time Available:</label>
+                <input type="datetime-local" id="time" name="time" required>
+
+                <label for="item">Item Name:</label>
+                <input type="text" id="item" name="item" required>
+
+                <label for="description">Short Description:</label>
+                <textarea id="description" name="description"></textarea>
+
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image" accept="image/*" value="Upload Image">
+
+                <label for="post" class="custom-button">Submit Post</label>
+                <input type="submit" id="post" style="display: none;">
+            </form>
+        </div>
+
+    </main>
+
+</body>
+
+</html>

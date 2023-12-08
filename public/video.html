@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+<link rel="manifest" href="favicon/site.webmanifest">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+    margin: 0;
+    font-size: 17px;
+    }
+
+    header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    padding: 0 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    }
+    .logo{
+        font-size: 2em;
+        /* color: #fff; */
+        color:black;
+        user-select: none;
+    }
+    .navigation a{
+        text-decoration: none;
+        position: relative;
+        font-size: 1.1rem;
+        font-weight: 500;
+        /* color: #fff; */
+        color:black;
+        margin-left: 40px;
+
+    }
+    .navigation a::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 100%;
+        height: 3px;
+        /* background: #fff; */
+        background:black;
+        border-radius: 5px;
+        transform-origin: right;
+        transform:scaleX(0);
+        transition: transform .5s;
+    }
+    .navigation a:hover::after{
+        transform:scaleX(1);
+        transform-origin: left;
+
+    }
+
+    #myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    }
+
+    .content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+    width: 100%;
+    /* padding: 20px; */
+    padding: 20px 15rem;
+    }
+
+    #myBtn {
+    width: 200px;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    /* transparent white color */
+    background: #ffffff89; 
+    /* background: #fff; */
+    color: #000;
+    cursor: pointer;
+    }
+
+    #myBtn:hover {
+    background: black;
+    color: #ddd;
+    }
+
+    
+
+    
+</style>
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="./video/Hiraeth.mp4" type="video/mp4">
+    </video>
+    
+    <header>
+        <div class="logo">CLIMATE CHANGE</div>
+        <nav class="navigation">
+            <a href="./index.html">Home</a>
+            <a href="./weather2.html">Weather</a>
+            <a>Video</a>
+            <a href="./more.html">More</a>
+            <a href="./inspiration.html">Inspiration</a>
+            <a href="../views/listings.ejs">Post</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Dear Visiters</h1>
+        <p>This film presents the scientific model's forecasts of potential abstract climate shifts.<br>
+         Through vivid visualizations of their impacts, it strives to heighten awareness and educate viewers about immediate and abrupt climate transformations.
+        <br> 
+         It seeks to prompt audiences to recognize the imminent impact of our past choices on our lives, highlighting the urgency for change.</p>
+        <p>Welcome!!!</p>
+        <p>THANK YOU FOR LOOKING!</p>
+        <button id="myBtn" onclick="myFunction()">Pause</button>
+    </div>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+
+        function myFunction() {
+        if (video.paused) {
+            video.play();
+            btn.innerHTML = "Pause";
+        } else {
+            video.pause();
+            btn.innerHTML = "Play";
+        }
+        }
+
+        /*-----Spanizer- Wraps letters with spans, for css animations-----*/
+            (function($) {
+            var s,
+            spanizeLetters = {
+                settings: {
+                letters: $('.js-spanize'),
+                },
+                init: function() {
+                s = this.settings;
+                this.bindEvents();
+                },
+                bindEvents: function(){
+                s.letters.html(function (i, el) {
+                    //spanizeLetters.joinChars();
+                    var spanizer = $.trim(el).split("");
+                    return '<span>' + spanizer.join('</span><span>') + '</span>';
+                });
+                },
+            };
+            spanizeLetters.init();
+            })(jQuery);
+    </script>
+</body>
+
+</html>
