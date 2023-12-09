@@ -7,11 +7,33 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="manifest" href="./manifest.json">
+    <!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
+
     <link rel="stylesheet" href="./home.css">
     </head>
 
     <body>
+        <script>
+            // register service worker
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                  .register('./sw.js')
+                  .then(function (reg) {
+                    if (reg.installing) {
+                      console.log('Service worker installing');
+                    } else if (reg.waiting) {
+                      console.log('Service worker installed');
+                    } else if (reg.active) {
+                      console.log('Service worker active');
+                    }
+                  })
+                  .catch(function (error) {
+                    // registration failed
+                    console.log('Registration failed with ' + error);
+                  });
+              }
+        </script>
         <!-- <div> -->
         <header>
                 <div class="logo">CLIMATE CHANGE</div>

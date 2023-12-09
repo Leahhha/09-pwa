@@ -6,7 +6,8 @@
         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-        <link rel="manifest" href="favicon/site.webmanifest">
+        <link rel="manifest" href="./manifest.json">
+        <!-- <link rel="manifest" href="favicon/site.webmanifest"> -->
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
@@ -228,6 +229,27 @@
     </head>
 
     <body>
+        <script>
+            // register service worker
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                  .register('./sw.js')
+                  .then(function (reg) {
+                    if (reg.installing) {
+                      console.log('Service worker installing');
+                    } else if (reg.waiting) {
+                      console.log('Service worker installed');
+                    } else if (reg.active) {
+                      console.log('Service worker active');
+                    }
+                  })
+                  .catch(function (error) {
+                    // registration failed
+                    console.log('Registration failed with ' + error);
+                  });
+              }
+        </script>
+        
         <!-- <div class="container">
             <div class="card">
             <h3>Title - Card 1</h3>
@@ -308,20 +330,27 @@
 
             async function askQuestion() {
             let majorCity = ['New York', 'London', 'Paris', 'Hongkong'];
+        
+            const response = await fetch('/weathercity')
+            console.log(response);
             
-            // const response = await fetch(`/weather?locationName=${question.value}`)
-            // console.log(response)
-            
-            let baseUrl = 'http://api.weatherapi.com/v1/forecast.json?key='+ 'b0b30bd847b4415a985185850232511' +'&q='; // Replace with your actual base URL
+            const jsonData = await response.json()
+            console.log(jsonData);
 
-            let urls = majorCity.map(city => {
-                return baseUrl + encodeURIComponent(city) + '&days=1&aqi=yes&alerts=no';
-            });
+            // let baseUrl = 'http://api.weatherapi.com/v1/forecast.json?key='+ 'apikey' +'&q='; // Replace with your actual base URL
 
-            const responses = await Promise.all(urls.map(url => fetch(url)));
-            const jsonData = await Promise.all(responses.map(response => response.json()));
+            // 将major City里的内容放在 base URL里 形成新的数组Array, 数组名叫新的 urls
+            // let urls = majorCity.map(city => {
+            //     return baseUrl + encodeURIComponent(city) + '&days=1&aqi=yes&alerts=no';
+            // });
 
-            console.log(jsonData); // Array of JSON data for each city
+            // console.log(urls);
+
+            // 对所有的urls的API进行请求 , 只用Promise只能对一条进行请求, 但promise.all可以对所有的URLAPI 同时发起请求
+            // const responses = await Promise.all(urls.map(url => fetch(url)));
+            // const jsonData = await Promise.all(responses.map(response => response.json()));
+
+            // console.log(jsonData); // Array of JSON data for each city
 
             let usEPAIndex2 = ['N/A', 'Good', 'Moderate', 'Unhealthy for sensitive group', 'Unhealthy', 'Very Unhealthy', 'Hazardous']
 
@@ -541,7 +570,7 @@
             const response = await fetch(`/weather?locationName=${question.value}`)
             console.log(response);
 
-            // let url = 'http://api.weatherapi.com/v1/forecast.json?key='+ 'b0b30bd847b4415a985185850232511' +'&q='
+            // let url = 'http://api.weatherapi.com/v1/forecast.json?key='+ 'apikey' +'&q='
 
             // url1 = url + question.value+'&days=1&aqi=yes&alerts=no'
             // console.log(url1)

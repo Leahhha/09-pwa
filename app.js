@@ -86,14 +86,29 @@ app.get('/listings', (req, res) => {
 
 // hide my api key using npm package "isomorphic-fetch"
 app.get('/weathercity', async (req, res) => {
-    const location = req.query.locationName;
+    // const location = req.query.locationName;
+    let majorCity = ['New York', 'London', 'Paris', 'Hongkong'];
     try {
-        const response = await fetch(
-            `http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${location}&days=1&aqi=yes&alerts=no`
-        )
+        // 字符串,变量,字符串
+        let baseUrl = 'http://api.weatherapi.com/v1/forecast.json?key='+ process.env.API_KEY +'&q='; // Replace with your actual base URL
+
+        let urls = majorCity.map(city => {
+            return baseUrl + encodeURIComponent(city) + '&days=1&aqi=yes&alerts=no';
+        });
+
+        console.log(urls);
+
+        //要对数组所有的数据发起请求 .all 是promise的属性
+        const responses = await Promise.all(urls.map(url => fetch(url)));
+        const jsonData = await Promise.all(responses.map(response => response.json()));
+
+        // 一串字符串 用模版字符串连接 ${}写常量 = const let var 定义的东西/ .env文件里的东西
+        // const response = await fetch(
+        //     `http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${location}&days=1&aqi=yes&alerts=no`
+        // )
         //make the data from api into json form
-        const data = await response.json();
-        res.json(data);
+        // const data = await response.json();
+        res.json(jsonData);
     } catch {
         res.status(500).send("Error");
     }
@@ -102,6 +117,7 @@ app.get('/weathercity', async (req, res) => {
 app.get('/weather', async (req, res) => {
     const location = req.query.locationName;
     try {
+        // fetch使用插件, 客户端和服务端所能使用的功能不同(使用插件从而使用fetch)
         const response = await fetch(
             `http://api.weatherapi.com/v1/forecast.json?key=${process.env.API_KEY}&q=${location}&days=1&aqi=yes&alerts=no`
         )
