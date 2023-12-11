@@ -1,83 +1,77 @@
-# Normal Business Hours
-*Part of an assignment for the ReCode class at NYU's IMA program, Fall 2023.*
+# 09 Progressive Web App
+*The Final assignment for the ReCode class at NYU's IMA program, Fall 2023.*
 
 ## Project Description
 
 Reserved IP address 206.189.254.67:3000
 
-Starter code for a website that serves your resume only during your normal business hours. Otherwise, it returns a simple message explaining when potential employers can return to find the information they seek.
+PC: You can check on my website by this URL and download it to your desktop.
+
+Phone: You can also add to main page by this URL.
+
+This progessive web app is inspired by the abrupt climate change. 
+
+![09-pwa phone](./public/images/documentation/09-pwa-01.png)
+
+![09-pwa pc](./public/images/documentation/09-pwa-02.png)
+
+![09-pwa downloaded](./public/images/documentation/app-icon.png)
+
+Set my aim: 
+
+For this final project, I aim to challenge myself of the html, css, and javascript skills. 
+
+Hunt for references: 
+
+I hunted lots of sample from Codepen such as Greensock animation, and interactive javascipt; also, W3C School is very helpful for css layout design for my webpage.
+
+Webpage Content: 
+
+The focus of the webpage is about the short film I made. 
+
+This film presents the scientific model's forecasts of potential abstract climate shifts. Through vivid visualizations of their impacts, it strives to heighten awareness and educate viewers about immediate and abrupt climate transformations. The scenes delve into various states of water molecules, illustrating snow, ice, rain, rivers, and floods as examples. This film aims to emphasize that human actions are the primary drivers of climate change. It seeks to prompt audiences to recognize the imminent impact of our past choices on our lives, highlighting the urgency for change.
 
 ## Working Process:
 
-For this assignment, I aim to make a interactive fun webpage with some animations in the denied page.
+For the home page, I used my previous main page style. Since the animation looks so smooth and I love to have it as the main page.
 
-After looked through several examples online, I found out that using Greensock library is the best choice.
+For the Weather page, I found out that the weather api also provides the air quality section; I think it will be fun to have this content on my webpage.
 
-I collected lots of useful references for creating cool html and css with fun animation.
+So I started to design what content I want the page to have and how I want the layout design for the page.
 
-I choose to use the default resume, because of the default one looks good to me.
+There are iterations for the webpage and I finally decided to use.
 
-The great thing about this project setting is that I can create boundaries between different portion of my life.
+I was inspired by time zone wall clock, and I picked four major city to showcase how my page is going to be like.
 
-For example, Study and gaining new skills are my top priority, so I prioritize assignments over other social events.
+  - New York (Eastern Time): Represents the Eastern Time Zone in the United States.
 
-That is why I let the resume page surf on the internet 9am-5pm.
+  - Chicago (Central Time): Represents the Central Time Zone in the United States.
 
-- Hobbies or personal interests
+  - Denver (Mountain Time): Represents the Mountain Time Zone in the United States.
 
-  Hobbies: Exploring new coffee shops, new stationary stores in the City.
+  - Los Angeles (Pacific Time): Represents the Pacific Time Zone in the United States.
 
-  Personal interests: Figure skating, painting, developing new skills - sign up for courses, doing art and design things...
-  
-- Are you a morning person?
+  - London (Greenwich Mean Time): Represents the GMT time zone.
 
-  Yes! I set the working hours to everyday 9am to 5pm, because this is the best schedule for me who prefer to work during daytimes. Ideally, having a dayoff is great.
+  - Paris (Central European Time): Represents the Central European Time Zone.
+
+  - Moscow (Moscow Standard Time): Represents Moscow Time (MSK).
+
+  - Dubai (Gulf Standard Time): Represents Gulf Standard Time (GST).
+
+  - Hong Kong: Represents Hong Kong Time (HKT) or China Standard Time (CST).
+
+  - Tokyo: Represents Japan Standard Time (JST).
+
+These cities are often chosen because they represent key regions in different time zones across the world. By showing these cities' weathers helps people quickly glance at the current weather in those regions.
 
 ### Coding Part:
 
-![Image Alt Text](./public/images/code1.png)
-
-This is my favorite coding part by add hover state to navigation.
-
-By adding this interaction makes the page more lively and fun.
-
-Also the texts pops up smoothly by utilizing the greensock external library
-
-![Image Alt Text](./public/images/denied-page.png)
-
-After designing my denied webpage, I let the folder run through digital ocean using Droplet.
-
-It is running successfully after I download the node, npm, pm2 to the new folder.
-
-![Image Alt Text](./public/images/droplet1.png)
-
-I also get a reserved IP address 206.189.254.67:3000
-
-!! It is working :-) !!
-
-![Image Alt Text](./public/images/reservedip.png)
-
-I love the overall outcome, and I wish to add scroll function with 3-4 image background to make the page more interactive.
+  ![09-pwa all file](./public/images/documentation/allfile.png)
 
 ### Challenges:
 
-There are lots of challenges, for example some details of page layout is not very ideal at the beginning.
 
-After changing the margin and padding, the webpage start to looking good.
-
-I tried to add multiple images as background to have more visual effects and compenents on a page.
-
-Sadly, after several attemps I wasn't able to combine scroll function with 3-4 images background on my page.
-
-I also get some advice from chatgpt, I should probably use div element to have multiple section and then add background to each section.
-
-I tried the piece of code that chatgpt generate, but the images are not showing up.
-
-Haven't figured out how to add several images to a page. 
-
-Hopfully, soon!!
-
-Another thing is that I should add ./ before my css and js files. Otherwise, on the digital ocean these two files cannot get access and the page looks like with plain html.
 
 ## Credit:
 
@@ -85,8 +79,14 @@ Another thing is that I should add ./ before my css and js files. Otherwise, on 
 
 [Helpful CodePen example 2: animation of the main page and layout](https://codepen.io/nitin-sharma0001/pen/yLZXLXO)
 
-[Helpful CodePen example 3: Text animation](https://codepen.io/StephenScaff/pen/oLBqmw)
+[Helpful CodePen example 3: Text animation](https://codepen.io/StephenScaff/pen/oLBqmw) I tried to add this one in, but wasn't able to add in.
 
-[Helpful CodePen example 4: showcase purpose webpage](https://codepen.io/kayfo23/pen/EeqYJw)
+[Create pagination:](https://www.w3schools.com/howto/howto_css_pagination.asp)
 
-[Helpful CodePen example 5: scroll webpage](https://codepen.io/camilasecond/pen/jOLMJvJ)
+[Image slide show](https://www.w3schools.com/howto/howto_js_slideshow.asp)
+
+[Image text:](https://www.w3schools.com/howto/howto_css_image_text.asp)
+
+[Transparent image text:](https://www.w3schools.com/howto/howto_css_image_transparent.asp)
+
+[Fullscreen Video:](https://www.w3schools.com/howto/howto_css_fullscreen_video.asp)
