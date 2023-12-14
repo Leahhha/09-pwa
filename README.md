@@ -41,6 +41,8 @@ For the Weather page, I found out that the weather api also provides the air qua
 
 So I started to design what content I want the page to have and how I want the layout design for the page.
 
+![09-pwa webpage design process](./public/images/documentation/recode_pwa09.png)
+
 There are iterations for the webpage and I finally decided to use.
 
 I was inspired by time zone wall clock, and I picked four major city to showcase how my page is going to be like.
